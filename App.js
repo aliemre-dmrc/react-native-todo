@@ -1,15 +1,14 @@
-import React, { useState } from 'react';
+import React, { useState  } from 'react';
 
-import { View, StyleSheet, ScrollView , FlatList} from 'react-native';
+import { View, StyleSheet, ScrollView } from 'react-native';
 
 import Header from "./comps/header";
 import TodoItem from "./comps/todoItem";
 import AddTodo from "./comps/addTodo";
 
-const App =  () =>  {
-  const [todos, setTodos] = useState([
-     
-  ]);
+const App = () =>  {
+  const [todos, setTodos] = useState([]);
+
 
   const pressHandler = (key) => {
     setTodos((prevTodos) => {
@@ -24,6 +23,7 @@ const App =  () =>  {
         ...prevTodos]
     })
   }
+  
   return (
     <View style={styles.container}>
       <Header />
@@ -45,11 +45,6 @@ const App =  () =>  {
     </View>
   );
 };
-/*<FlatList
-            data={todos} 
-            renderItem={({item}) => (
-            <TodoItem item ={item} pressHandler={pressHandler} />
-         )} /> */
 
 const styles = StyleSheet.create({
   container: {
@@ -60,7 +55,8 @@ const styles = StyleSheet.create({
     padding: 20,
   },
   list: {
-    marginVertical: 15,
+    marginTop: 10,
+    marginBottom: 275,
     paddingHorizontal: 12.5,
   },
 });
